@@ -1,0 +1,19 @@
+<%= form_for :gamer_achieve, url: gamer_achieves_path do |form| %>
+  <%#= render 'shared/errors', resource: @gamer_achieve %>
+
+  <p>
+    <%= form.label :gamer_id %><br>
+    <%= form.collection_select :gamer_id, Gamer.all, :id, :surname, prompt: true %>
+  </p>
+
+  <p>
+    <%= form.label :match_id %>:
+    <%= form.collection_select :match_id, Match.all, :id, :location, prompt: true %>
+  </p>
+
+  <p>
+    <%= form.label :achieve_id %><br>
+    <%= form.collection_select :achieve_id, Achieve.all, :id, :description, prompt: true %>
+  </p>
+  <p><%= form.submit %></p>
+<% end %>

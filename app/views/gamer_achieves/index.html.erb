@@ -1,0 +1,37 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Gamer achieves</title>
+</head>
+<!--div class="container-team"-->
+
+  <h1 align="center">All gamers with achieves </h1>
+    <table border="1" align="center">
+        <thead>
+          <th>Gamer ID</th>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Achievement</th>
+          <th>Achieve in location</th>
+          <th>Match at time</th>
+          <th>Statistic info</th>
+        </thead>
+
+          <% @gamer_achieves.each do |ga| %>
+        <tr>
+          <td><%= ga.id %></td>
+          <td><%= ga.gamer.name %></td>
+          <td><%= ga.gamer.surname %></td>
+
+          <td><%= ga.achieve.description %></td>
+
+          <td><%= ga.match.location %></td>
+          <td><%=link_to "#{ga.match.created_at.strftime("Played on %m/%d/%Y at %H:%M")}", match_path(ga.match.id)  %></td>
+
+          <td><%= link_to "show gamer stats", gamer_path(ga.gamer_id) %></td>
+
+        </tr>
+      <% end %>
+    </table>
+
+  </div>
+</div>

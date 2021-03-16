@@ -1,0 +1,83 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+</head>
+<div class="container-team">
+  <div class="container-team-int">
+  <h1>List of available achieves</h1>
+
+    <table border="1">
+      <% @achieves.each do |achieve| %>
+        <tr>
+          <td><%= achieve.id %></td>
+          <td><%= achieve.description %></td>
+
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <hr />
+  <div class="container-team-int">
+    <h1>List of available teams</h1>
+    <br />
+      <table border="1">
+        <% @teams.each do |team| %>
+        <tr>
+          <td><%= team.id %></td>
+          <td><%= team.team_name %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <hr />
+  <div class="container-team-int">
+  <h1>List of available gamers</h1>
+  <br>
+    <table border="1">
+      <% @gamers.each do |gamer| %>
+        <tr>
+          <td>Team: <%= gamer.team.team_name %></td>
+          <td><%= gamer.name %></td>
+          <td><%= gamer.surname %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="container-team-int">
+  <h1>List of matches</h1>
+  <br>
+  <table border="1">
+    <% @matches.each do |match| %>
+      <tr>
+        <td>Match in: <%= match.location %></td>
+        <td><%= match.duration %></td>
+        <td><%= match.created_at.strftime("%d/%m/%Y") %></td>
+        <!--<td><%#= match.team.team_name %></td>
+
+        <td><%#= match.result.title   %></td>-->
+      </tr>
+    <% end %>
+  </table>
+  </div>
+</div>
+<br />
+  <div class="container-team-result">
+
+    <h1>List of Gamer Achieves</h1>
+    <br>
+    <table border="1">
+      <% @gamer_achieves.each do |ga| %>
+        <tr>
+          <td>Match in: <%= ga.match.location %></td>
+          <td><%= ga.achieve.description %></td>
+          <td><%= ga.gamer.name %></td>
+          <td><%= ga.gamer.surname %></td>
+          <td><%= ga.gamer.age %></td>
+          <td>Gamer from: <%= ga.gamer.team.team_name   %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  </div>
+</div>

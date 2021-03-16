@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Matches</title>
+</head>
+<div class="container-team">
+  <div class="container-team-int">
+  <h1>List of available matches</h1>
+
+    <table border="1">
+      <% @matches.each do |match| %>
+        <tr>
+          <td><%= match.id %></td>
+          <td><%= match.location %></td>
+          <td><%= match.duration %></td>
+          <td><%= match.created_at %></td>
+
+          <td><%= link_to "show match stats", match_path(match.id) %></td>
+
+
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<div class="container-team">
+  <div class="container-team-int">
+    <h1>List of last five matches</h1>
+
+    <table border="1">
+      <% last_five_matches.each do |match| %>
+        <tr>
+          <td><%= match.id %></td>
+          <td><%= match.location %></td>
+          <td><%= match.created_at.strftime("%d/%m/%Y") %></td>
+
+          <td><%= link_to "show match stats", match_path(match.id) %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

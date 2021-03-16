@@ -1,0 +1,22 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Achieves</title>
+</head>
+<div class="container-team">
+  <div class="container-team-int">
+  <h1>List of available achieves for gamers</h1>
+
+    <table border="1">
+      <% @achieves.each do |ach| %>
+        <tr>
+          <td><%= ach.id %></td>
+          <td><%= ach.description %></td>
+          <td><%= ach.created_at %></td>
+          <td><%= ach.updated_at %></td>
+
+        </tr>
+      <% end %>
+    </table>
+
+  </div>
+</div>

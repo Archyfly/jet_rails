@@ -1,0 +1,27 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Teams</title>
+</head>
+<div class="container-team">
+
+  <div class="container-team-result">
+    <h1>List of available teams</h1>
+    <br />
+      <table border="1">
+        <% @teams.each do |team| %>
+        <tr>
+          <td><%= team.id %></td>
+          <td><%= link_to "#{ team.team_name }", team_path(team.id) %></td>
+          <% list = "" %>
+          <% team.gamers.each do |tg| %>
+            <td><%= link_to "#{tg.name} #{tg.surname}.", gamer_path(tg.id) %></td>
+            <% list += "#{tg.name} #{tg.surname}. "  %>
+          <% end %>
+          <td><%#= list %>
+        </tr>
+        <% end %>
+    </table>
+  </div>
+  <hr />
+
+</div>

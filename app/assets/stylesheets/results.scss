@@ -1,0 +1,37 @@
+// Place all the styles related to the Results controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.container-team {
+  display: flex;
+  flex-direction: row;
+  flex-basis: content-box;
+  align-items: center;
+
+}
+
+.container-team h1 {
+  font-size: medium;
+  font-family: Ubuntu;
+
+}
+
+.container-team-int {
+  display: flex;
+  background-color: #EFEFEF;
+  width: 25%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 60%;
+}
+
+.container-team-result {
+  display: flex;
+  background-color: #ef8181;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+

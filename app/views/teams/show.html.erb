@@ -1,0 +1,28 @@
+<h1 align="center"><%= @team.team_name %> </h1>
+<p>
+  <strong>Team id:</strong>
+  <%= @team.id %>
+</p>
+
+<p>
+  <strong>Team name:</strong>
+  <%= @team.team_name %>
+</p>
+<strong>Gamers in team:</strong>
+<table border="1">
+  <thead>
+    <th>Gamer id</th>
+    <th>Name Surname</th>
+    <th>Age</th>
+  </thead>
+  <% @team.gamers.each do |tg| %>
+    <tr>
+      <td><%= tg.id %></td>
+      <% list = "" %>
+        <td><%= link_to "#{tg.name} #{tg.surname}.", gamer_path(tg.id) %></td>
+        <% list += "#{tg.name} #{tg.surname}. "  %>
+
+      <td><%= tg.age %><%#= list %>
+    </tr>
+  <% end %>
+</table>

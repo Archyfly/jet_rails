@@ -1,0 +1,30 @@
+<h1>Test Gamer Achievements</h1>
+<table border="1">
+  <th><strong>gamer id:</strong></th>
+  <tr>
+    <td><%= @gamer.id %></td>
+  </tr>
+  <th><strong>gamer name/surname:</strong></th>
+  <tr><td><%= @gamer.name %> <%= @gamer.surname %></td></tr>
+  <th><strong>gamer updated:</strong></th>
+  <tr><td><%= @gamer.updated_at %></td></tr>
+</table>
+<h1>List of last five matches</h1>
+<table border="1">
+  <% last_five_matches.each do |match| %>
+    <tr>
+      <td><%= match.id %></td>
+      <td><%= match.location %></td>
+      <td><%= match.created_at.strftime("%d/%m/%Y") %></td>
+
+      <td><%= link_to "show match stats", match_path(match.id) %></td>
+    </tr>
+  <% end %>
+</table>
+<table border="1">
+  <th><strong>Achieves description:</strong></th>
+  <tr>
+    <td><%= @result %></td>
+  </tr>
+</table>
+

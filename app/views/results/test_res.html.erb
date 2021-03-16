@@ -1,0 +1,8 @@
+<%= form_with model @gamer, :url => { :action => "show_gamer_results" }, :html => {:class => "nifty_form"} do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :description %>
+  </p>
+
+  <p><%= form.submit %></p>
+<% end %>

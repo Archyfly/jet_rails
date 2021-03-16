@@ -1,0 +1,31 @@
+<h1>Gamer Achievements</h1>
+
+<table border="1">
+  <th><strong>gamer id:</strong></th>
+  <tr>
+    <td><%= @gamer.id %></td>
+  </tr>
+
+  <th><strong>gamer name/surname:</strong></th>
+  <tr><td><%= @gamer.name %> <%= @gamer.surname %></td></tr>
+
+  <th><strong>gamer updated:</strong></th>
+  <tr><td><%= @gamer.updated_at %></td></tr>
+
+  <th><strong>gamer achieves:</strong></th>
+  <tr>
+    <td>
+  <% if @ga != nil %>
+    <% @ga.each do |ga| %>
+      <%= ga.achieve.description %> in <%= ga.match.location %> played on
+          <%=link_to "#{ga.match.created_at.strftime("%m/%d/%Y at %H:%M")}",
+                     match_path(ga.match.id)  %></td>
+    <% end %>
+  <% else %>
+    Not found records about this gamer
+  <% end %>
+  </td>
+  </tr>
+    <%#= GamerAchieve.find_by(gamer_id: @gamer.id).achieve.description %>
+</table>
+
